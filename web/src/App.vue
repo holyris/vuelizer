@@ -1,12 +1,26 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="app">
+        <router-view />
+    </div>
 </template>
 
 <script>
+// import { parseComponent } from "vue-template-compiler";
+import { parse, compileScript } from "@vue/compiler-sfc";
+import { script } from "./sfcScript.js";
 export default {
-    name: 'App'
+    name: "App",
+    data() {
+        return {
+            parsed: null,
+            compiled: null
+        };
+    },
+    created() {
+        const parsed = parse(script);
+        const compiled = compileScript(parsed, null);
+        console.log(parsed, compiled);
+    }
 };
 </script>
 

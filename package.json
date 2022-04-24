@@ -30,7 +30,15 @@
                 "command": "example.helloWorld",
                 "title": "Example: Hello World"
             }
-        ]
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "example.helloWorld",
+                    "title": "Example: HelloWorld"
+                }
+            ]
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
